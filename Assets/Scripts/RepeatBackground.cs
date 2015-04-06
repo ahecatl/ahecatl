@@ -5,13 +5,19 @@ public class RepeatBackground : MonoBehaviour
 { 
 	public float increment;
 
-	void OnBecameInvisible()
-	{
-		//calculate current position
+	private Transform m_cameraTransform;
+
+	private void Start(){ 
+		m_cameraTransform = Camera.allCameras [0].transform;
+	}
+
+	private void Update() {
 		Vector3 position = gameObject.transform.position;
-		//calculate new position
-		float newX = position.x + increment;
-		//move to new position when invisible
-		gameObject.transform.position = new Vector3 (newX, position.y, 0f);
+		float delta = m_cameraTransform.position.x - position.x;
+
+		if (Mathf.Abs (delta) > increment / 2) {
+			float newX = position.x + increment * Mathf.Sign(delta);
+			gameObject.transform.position = new Vector3 (newX, position.y, 0f);
+		}
 	}
 }
