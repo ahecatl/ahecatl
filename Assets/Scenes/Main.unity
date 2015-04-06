@@ -800,6 +800,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 11475104, guid: f2e9797c41b850d459476e07675b9256, type: 2}
+      propertyPath: trackingCamera
+      value: 
+      objectReference: {fileID: 1206231736}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2e9797c41b850d459476e07675b9256, type: 2}
   m_IsPrefabParent: 0
